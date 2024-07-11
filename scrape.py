@@ -67,12 +67,12 @@ driver_path = 'path/to/chromedriver'
 url = 'https://eth.moonarch.app/token/0xa8b229f7045192750a6aa25ccb088a196e713cd9'
 
 # Create Chrome options to ignore SSL certificate errors
-chrome_options = Options()
+# chrome_options = Options()
 # chrome_options.add_argument('--ignore-certificate-errors')
 # chrome_options.add_argument('--ignore-ssl-errors')
 
 # Create a new instance of the Chrome driver with options
-driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 
 # Navigate to the webpage
 driver.get(url)
