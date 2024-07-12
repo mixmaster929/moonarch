@@ -23,11 +23,11 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 driver.get(url)
 
 token_check_messages = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.CLASS_NAME, 'token-check-message check-alert'))
+    EC.presence_of_all_elements_located((By.CLASS_NAME, 'check-alert'))
 )
 
-# for message in token_check_messages:
-print(token_check_messages.text + "=======================")
+for element in token_check_messages:
+    print(element.text.strip())
 
 driver.quit()
 
