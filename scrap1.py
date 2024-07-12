@@ -22,8 +22,8 @@ url = 'https://eth.moonarch.app/token/0xa8b229f7045192750a6aa25ccb088a196e713cd9
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 driver.get(url)
 
-token_check_messages = WebDriverWait(driver, 100).until(
-    EC.presence_of_all_elements_located((By.CLASS_NAME, 'token-check-message check-alert'))
+token_check_messages = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.CLASS_NAME, 'token-check-message check-alert'))
 )
 
 # for message in token_check_messages:
